@@ -1,0 +1,5 @@
+select Appointments.JobName,count(Performers.Id)
+from Performers_Projects_Appointments
+join Appointments on Appointments.Id=Performers_Projects_Appointments.AppointmentId
+join Performers on Performers.Id=Performers_Projects_Appointments.PerformerId
+group by Appointments.JobName
